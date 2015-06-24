@@ -1,8 +1,6 @@
 # dateformat
 Easy to format dates in PHP
 
- # Examples
-
 # format date
 
 `$date = new DateFormat();`
