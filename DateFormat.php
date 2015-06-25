@@ -37,6 +37,66 @@ class DateFormat {
         $instance->date = \DateTime::createFromFormat($format, $time);
         return $instance;
     }
+    
+    /**
+     * Add days to current datetime
+     * @param int $days
+     * @return \baricio\util\DateFormat
+     */
+    public function addDay($days){
+        $this->date->add(new \DateInterval('P'. $days .'D'));
+        return $this;
+    }
+    
+    /**
+     * Add months to current datetime
+     * @param int $months
+     * @return \baricio\util\DateFormat
+     */
+    public function addMonth($months){
+        $this->date->add(new \DateInterval('P'. $months .'M'));
+        return $this;
+    }
+    
+    /**
+     * Add years to current datetime
+     * @param int $years
+     * @return \baricio\util\DateFormat
+     */
+    public function addYear($years){
+        $this->date->add(new \DateInterval('P'. $years .'Y'));
+        return $this;
+    }
+    
+    /**
+     * Add hours to current datetime
+     * @param int $hours
+     * @return \baricio\util\DateFormat
+     */
+    public function addHour($hours){
+        $this->date->add(new \DateInterval('PT'. $hours .'H'));
+        return $this;
+    }
+    
+    /**
+     * Add minutes to current datetime
+     * @param int $minutes
+     * @return \baricio\util\DateFormat
+     */
+    public function addMinute($minutes){
+        $this->date->add(new \DateInterval('PT'. $minutes .'M'));
+        return $this;
+    }
+    
+    /**
+     * Add seconds to current datetime
+     * @param int $seconds
+     * @return \baricio\util\DateFormat
+     */
+    public function addSecond($seconds){
+        $this->date->add(new \DateInterval('PT'. $seconds .'S'));
+        return $this;
+    }
 
     /**
      * Return date m/d/Y
